@@ -47,4 +47,17 @@ class CalculationsController <ApplicationController
     render("calculations/square_root_form.html.erb")
   end
 
+  def payment
+    @rate = params[:rate].to_f
+    @months = params[:months].to_f
+    @principal = params[:principal].to_f
+    @payment = (@rate/12/10000 * @principal)/(1 - ((1 + @rate/12/10000)**(-@months * 12)))
+    render("calculations/payment.html.erb")
+  end
+
+  def payment_form
+    render("calculations/payment_form.html.erb")
+  end
+
+
 end

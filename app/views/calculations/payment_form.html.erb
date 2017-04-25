@@ -4,7 +4,7 @@
 <head>
   <title>Omnicalc Params Target</title>
   <meta name="csrf-param" content="authenticity_token" />
-  <meta name="csrf-token" content="/DaRKoMoiSmco0pyKp3eNzBZasZab/vLIWZ0/YwcPka1KD887k+3BsIeUOnUhHNAM/cXFQbrh964hgqghlniLQ==" />
+  <meta name="csrf-token" content="6SR0Y9r78FOJUHQ/j89x+Oi72DedTRlWJSjj1kb4yc6gOtp1t5zOfNftbqRx1tyP6xWl5MHJZUO8yJ2LTL0VpQ==" />
 
   <link rel="stylesheet" media="all" href="/assets/application-1c79c29286204cfec74780022d0186e27fc9f09c8b5ae96d566e54dca4b9ce48.css" />
   <script src="/assets/application-521b49b32664ff50f93d312357743f30a2baf099738409fbbf5f881e52ae6a52.js"></script>
@@ -99,28 +99,38 @@
         </table>
 
         <h1>
-          Square Results
+          Payment Calculation
         </h1>
 
-        <dl>
-          <dt>
-            Number
-          </dt>
-          <dd>
-            <%= @user_number %>
-          </dd>
+        <form action="/payment/results">
+          <div>
+            <label for="apr_input">
+              APR
+            </label>
 
-          <dt>
-            Square
-          </dt>
-          <dd>
-            <%= @square %>
-          </dd>
-        </dl>
+            <input id="apr_input" text="text" name="rate" placeholder="E.g. 5.42">
+          </div>
 
-        <a href="/square/new">
-          Calculate another square
-        </a>
+          <div>
+            <label for="years_input">
+              Number of years
+            </label>
+
+            <input id="years_input" text="text" name="months" placeholder="How many years to repay?">
+          </div>
+
+          <div>
+            <label for="principal_input">
+              Principal
+            </label>
+
+            <input id="principal_input" text="text" name="principal" placeholder="How much principal?">
+          </div>
+
+          <button>
+            Calculate monthly payment
+          </button>
+        </form>
 
 
       </div>
