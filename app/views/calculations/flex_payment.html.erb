@@ -103,7 +103,7 @@
         </h1>
 
         <p>
-          A <%= @months.round(0) %> year loan of <%= number_to_currency(@principal.round(0)) %> with an annual interest rate of <%= @rate/100 %>%, requires a monthly payment of <%= number_to_currency(@payment.round(0)) %>
+          A <%= @months.round(0) %> year loan of <%= number_to_currency(@principal, precision: 0) %> with an annual interest rate of <%= @rate/100 %>%, requires a monthly payment of <%= number_to_currency(@payment, precision: 0) %>
         </p>
 
 
