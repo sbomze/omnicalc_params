@@ -51,12 +51,22 @@ class CalculationsController <ApplicationController
     @rate = params[:rate].to_f
     @months = params[:months].to_f
     @principal = params[:principal].to_f
-    @payment = (@rate/12/10000 * @principal)/(1 - ((1 + @rate/12/10000)**(-@months * 12)))
+    @payment = (@rate/12/100 * @principal)/(1 - ((1 + @rate/12/100)**(-@months * 12)))
     render("calculations/payment.html.erb")
   end
 
   def payment_form
     render("calculations/payment_form.html.erb")
+  end
+
+  def random
+    @min = params[:min].to_f
+    @max = params[:max].to_f
+        render("calculations/random.html.erb")
+  end
+
+  def random_form
+    render("calculations/random_form.html.erb")
   end
 
 

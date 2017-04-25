@@ -4,7 +4,7 @@
 <head>
   <title>Omnicalc Params Target</title>
   <meta name="csrf-param" content="authenticity_token" />
-  <meta name="csrf-token" content="uLHhGQ4dtYiYkG2nkNX9rdaUj7j+ZyhYI9mgRrBuXhzxr08PY3qLp8YtdzxuzFDa1Trya6LjVE26Od4buiuCdw==" />
+  <meta name="csrf-token" content="AgHj7X5SuUncqjWlbSUWerW1juRJcd4jE9ZYq9qoDRBLH037EzWHZoIXLz6TPLsNthvzNxX1ojaKNib20O3Rew==" />
 
   <link rel="stylesheet" media="all" href="/assets/application-1c79c29286204cfec74780022d0186e27fc9f09c8b5ae96d566e54dca4b9ce48.css" />
   <script src="/assets/application-521b49b32664ff50f93d312357743f30a2baf099738409fbbf5f881e52ae6a52.js"></script>
@@ -99,41 +99,34 @@
         </table>
 
         <h1>
-          Payment Results
+          Random Results
         </h1>
 
         <dl>
           <dt>
-            APR
+            Minimum
           </dt>
           <dd>
-            <%= @rate %>%
+            <%= @min %>
           </dd>
 
           <dt>
-            Number of years
+            Maximum
           </dt>
           <dd>
-            <%= @months %>
+            <%= @max %>
           </dd>
 
           <dt>
-            Principal
+            Random Number
           </dt>
           <dd>
-            <%= number_to_currency(@principal, precision: 0) %>
-          </dd>
-
-          <dt>
-            Payment
-          </dt>
-          <dd>
-            <%= number_to_currency(@payment, precision: 0) %>
+            <%= rand(@min..@max).round(3) %>
           </dd>
         </dl>
 
-        <a href="/payment/new">
-          Calculate another payment
+        <a href="/random/new">
+          Pick another random number
         </a>
 
 

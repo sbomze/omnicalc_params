@@ -4,7 +4,7 @@
 <head>
   <title>Omnicalc Params Target</title>
   <meta name="csrf-param" content="authenticity_token" />
-  <meta name="csrf-token" content="uLHhGQ4dtYiYkG2nkNX9rdaUj7j+ZyhYI9mgRrBuXhzxr08PY3qLp8YtdzxuzFDa1Trya6LjVE26Od4buiuCdw==" />
+  <meta name="csrf-token" content="NScyyuCHFql95sub6FjBpSwxLLubPdcnQsuM8dZGc9N8OZzcjeAohiNb0QAWQWzSL59RaMe5qzLbK/Ks3AOvuA==" />
 
   <link rel="stylesheet" media="all" href="/assets/application-1c79c29286204cfec74780022d0186e27fc9f09c8b5ae96d566e54dca4b9ce48.css" />
   <script src="/assets/application-521b49b32664ff50f93d312357743f30a2baf099738409fbbf5f881e52ae6a52.js"></script>
@@ -99,42 +99,30 @@
         </table>
 
         <h1>
-          Payment Results
+          Random Calculation
         </h1>
 
-        <dl>
-          <dt>
-            APR
-          </dt>
-          <dd>
-            <%= @rate %>%
-          </dd>
+        <form action="/random/results">
+          <div>
+            <label for="min_input">
+              Minimum
+            </label>
 
-          <dt>
-            Number of years
-          </dt>
-          <dd>
-            <%= @months %>
-          </dd>
+            <input id="min_input" text="text" name="min" placeholder="E.g. 1.5">
+          </div>
 
-          <dt>
-            Principal
-          </dt>
-          <dd>
-            <%= number_to_currency(@principal, precision: 0) %>
-          </dd>
+          <div>
+            <label for="max_input">
+              Maximum
+            </label>
 
-          <dt>
-            Payment
-          </dt>
-          <dd>
-            <%= number_to_currency(@payment, precision: 0) %>
-          </dd>
-        </dl>
+            <input id="max_input" text="text" name="max" placeholder="E.g. 4.5">
+          </div>
 
-        <a href="/payment/new">
-          Calculate another payment
-        </a>
+          <button>
+            Pick random number
+          </button>
+        </form>
 
 
       </div>
