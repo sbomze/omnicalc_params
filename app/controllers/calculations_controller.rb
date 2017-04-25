@@ -30,4 +30,11 @@ class CalculationsController <ApplicationController
     render("calculations/flex_payment.html.erb")
   end
 
+  def flex_random
+    @rand1 = params["rand1"].to_f
+    @rand2 = params["rand2"].to_f
+    @rand = rand(@rand1..@rand2)
+    render("calculations/flex_random.html.erb")
+  end
+
 end
