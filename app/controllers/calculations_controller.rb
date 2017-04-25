@@ -11,19 +11,23 @@ class CalculationsController <ApplicationController
   end
 
   def flex_square_5
-    # Paramaters: {"num" => "5"}
     @user_number = params["num"].to_f
     @square = @user_number**2
     render("calculations/flex_square_5.html.erb")
   end
 
   def flex_square_root_8
-    # Paramaters: {"num" => "5"}
     @user_number = params["num"].to_f
     @square_root = @user_number**0.5
     render("calculations/flex_square_root_8.html.erb")
   end
 
-
+  def flex_payment
+    @rate = params["rate"]
+    @months = params["months"]
+    @principal = params["principal"]
+    @payment = (@rate/12/100 * @principal)/(1 - ((1 + @rate/12/100)**(-@months * 12)))
+    render("calculations/flex_payment.html.erb")
+  end
 
 end
