@@ -23,9 +23,9 @@ class CalculationsController <ApplicationController
   end
 
   def flex_payment
-    @rate = params["rate"]
-    @months = params["months"]
-    @principal = params["principal"]
+    @rate = params["rate"].to_f
+    @months = params["months"].to_f
+    @principal = params["principal"].to_f
     @payment = (@rate/12/100 * @principal)/(1 - ((1 + @rate/12/100)**(-@months * 12)))
     render("calculations/flex_payment.html.erb")
   end
