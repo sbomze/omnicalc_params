@@ -69,5 +69,9 @@ class CalculationsController <ApplicationController
     render("calculations/random_form.html.erb")
   end
 
+  def test
+    @blah = params["num1"].to_f * params["num2"].to_f
+    render("calculations/test.html.erb")
+  end
 
 end
